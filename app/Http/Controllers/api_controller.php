@@ -14,10 +14,10 @@ class api_controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //buat nampilin data - get
     {
         //
-        $input = Request()->all();
+        $input = Request()->all(); //buat ngambil parameter -> setelah ? google/h?id=1
 
         if ($input == null) {
             $pengiriman = DB::table('pengiriman')->get();
@@ -130,16 +130,16 @@ class api_controller extends Controller
         try {
             $insert = DB::table('pengiriman')->where('id_pengiriman', '=', $id)->update(
                 [
-                    'id_pengiriman' => $request->get('Id_Pengiriman'),
-                    'id_karyawan' => $request->get('Id_Karyawan'),
-                    'id_penjualan' => $request->get('Id_Penjualan'),
-                    'id_jadwal' => $request->get('Id_Jadwal'),
-                    'id_pelanggan' => $request->get('Id_Pelanggan'),
-                    'status_pelanggan' => $request->get('Status_Pelanggan')
+                    'id_pengiriman' => $request->get('id_pengiriman'),
+                    'id_karyawan' => $request->get('id_karyawan'),
+                    'id_penjualan' => $request->get('id_penjualan'),
+                    'id_jadwal' => $request->get('id_jadwal'),
+                    'id_pelanggan' => $request->get('id_pelanggan'),
+                    'status_pelanggan' => $request->get('status_pelanggan')
                 ]
             );
             $res['message'] = "Berhasil";
-            $res['value'] = $insert;
+            // $res['value'] = $insert;
             return response($res);
         } catch (QueryException $e) {
             $res = $e->getMessage();
@@ -159,7 +159,6 @@ class api_controller extends Controller
         try {
             $hapus = DB::table('pengiriman')->where('id_pengiriman', '=', $id)->delete();
             $res['message'] = "Berhasil";
-            $res['value'] = $hapus;
             return response($res);
         } catch (QueryException $e) {
             $res = $e->getMessage();
