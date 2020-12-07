@@ -10,6 +10,6 @@ class apicontroller extends Controller
     //
     function get_all()
     {
-        return response()->json(pengiriman::all(), 200);
+        return response()->json(pengiriman::all());
     }
 }

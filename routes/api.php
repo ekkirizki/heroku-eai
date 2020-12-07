@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\api_controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('api/pengiriman', [apicontroller::class, 'get_all'])->name('api');
+
+Route::resource('pengiriman', api_controller::class);

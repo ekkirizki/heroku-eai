@@ -36,5 +36,3 @@ Route::resource('', pengiriman_controller::class)->except('edit', 'update', 'sho
 Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
 Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
-
-Route::get('api/pengiriman', [apicontroller::class, 'get_all'])->name('api');
