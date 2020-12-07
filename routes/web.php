@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\apicontroller;
 use App\Http\Controllers\jadwal_controller;
 use App\Http\Controllers\pengiriman_controller;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,5 @@ Route::resource('', pengiriman_controller::class)->except('edit', 'update', 'sho
 Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
 Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
+
+Route::get('api/pengiriman', [apicontroller::class, 'get_all'])->name('api');
