@@ -66,33 +66,31 @@ return [
         ],
 
         'pgsql' => [
+            // 'driver' => 'pgsql',
+            // // 'url' => $Database_url,
+            // 'host' => $Database_url["host"],
+            // 'port' => $Database_url["port"],
+            // 'database' => ltrim($Database_url["path"], "/"),
+            // 'username' => $Database_url["user"],
+            // 'password' => $Database_url["pass"],
+            // 'charset' => 'utf8',
+            // 'prefix' => '',
+            // 'prefix_indexes' => true,
+            // 'schema' => 'public',            
+            // 'sslmode' => 'require'
+
             'driver' => 'pgsql',
-            // 'url' => $Database_url,
-            'host' => $Database_url["host"],
-            'port' => $Database_url["port"],
-            'database' => ltrim($Database_url["path"], "/"),
-            'username' => $Database_url["user"],
-            'password' => $Database_url["pass"],
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
-            // 'sslmode' => 'prefer',
-            'sslmode' => 'require'
-
-            // 'pgsql' => [
-            //     'driver' => 'pgsql',
-            //     'url' => env('DATABASE_URL'),
-            //     'host' => env('DB_HOST', '127.0.0.1'),
-            //     'port' => env('DB_PORT', '5432'),
-            //     'database' => env('DB_DATABASE', 'forge'),
-            //     'username' => env('DB_USERNAME', 'forge'),
-            //     'password' => env('DB_PASSWORD', ''),
-            //     'charset' => 'utf8',
-            //     'prefix' => '',
-            //     'prefix_indexes' => true,
-            //     'schema' => 'public',
-            //     'sslmode' => 'prefer',
+            'sslmode' => 'prefer',
         ],
 
         'sqlsrv' => [

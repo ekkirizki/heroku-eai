@@ -8,5 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class pengiriman extends Model
 {
     use HasFactory;
-    protected $kirim = ['Id_Pengiriman', 'Id_Karyawan', 'Id_Penjualan', 'Id_Jadwal', 'Id_Pelanggan', 'Status_Pengiriman'];
+    protected $table = 'pengiriman';
+    protected $fillable = [
+        'id_pengiriman',
+        'id_karyawan',
+        'id_penjualan',
+        'id_jadwal',
+        'id_pelanggan',
+        'status_pengiriman'
+    ];
+    protected $PrimaryKey = 'id_pengiriman'; //buat ganti primarykey
 }

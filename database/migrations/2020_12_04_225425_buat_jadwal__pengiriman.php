@@ -16,61 +16,73 @@ class BuatJadwalPengiriman extends Migration
     {
         //                        
         Schema::create('jadwal_pengiriman', function (Blueprint $table) {
-            $table->string('Id_Jadwal')->primary('Id_Jadwal');
-            $table->string('Hari_Pengiriman');
-            $table->time('Jam_Pengiriman');
+            $table->string('id_jadwal')->primary('id_jadwal');
+            $table->string('hari_pengiriman');
+            $table->time('jam_pengiriman');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
         });
 
         DB::table('jadwal_pengiriman')->insert([
             [
-                'Id_Jadwal' => 'SEN10',
-                'Hari_Pengiriman' => 'Senin',
-                'Jam_Pengiriman' => 100000
+                'id_jadwal' => 'SEN10',
+                'hari_pengiriman' => 'Senin',
+                'jam_pengiriman' => 100000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'SEL10',
-                'Hari_Pengiriman' => 'Selasa',
-                'Jam_Pengiriman' => 100000
+                'id_jadwal' => 'SEL10',
+                'hari_pengiriman' => 'Selasa',
+                'jam_pengiriman' => 100000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'RAB10',
-                'Hari_Pengiriman' => 'Rabu',
-                'Jam_Pengiriman' => 100000
+                'id_jadwal' => 'RAB10',
+                'hari_pengiriman' => 'Rabu',
+                'jam_pengiriman' => 100000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'KAM10',
-                'Hari_Pengiriman' => 'Kamis',
-                'Jam_Pengiriman' => 100000
+                'id_jadwal' => 'KAM10',
+                'hari_pengiriman' => 'Kamis',
+                'jam_pengiriman' => 100000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'JUM10',
-                'Hari_Pengiriman' => 'Jumat',
-                'Jam_Pengiriman' => 100000
+                'id_jadwal' => 'JUM10',
+                'hari_pengiriman' => 'Jumat',
+                'jam_pengiriman' => 100000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'SEN14',
-                'Hari_Pengiriman' => 'Senin',
-                'Jam_Pengiriman' => 140000
+                'id_jadwal' => 'SEN14',
+                'hari_pengiriman' => 'Senin',
+                'jam_pengiriman' => 140000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'SEL14',
-                'Hari_Pengiriman' => 'Selasa',
-                'Jam_Pengiriman' => 140000
+                'id_jadwal' => 'SEL14',
+                'hari_pengiriman' => 'Selasa',
+                'jam_pengiriman' => 140000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'RAB14',
-                'Hari_Pengiriman' => 'Rabu',
-                'Jam_Pengiriman' => 140000
+                'id_jadwal' => 'RAB14',
+                'hari_pengiriman' => 'Rabu',
+                'jam_pengiriman' => 140000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'KAM14',
-                'Hari_Pengiriman' => 'Kamis',
-                'Jam_Pengiriman' => 140000
+                'id_jadwal' => 'KAM14',
+                'hari_pengiriman' => 'Kamis',
+                'jam_pengiriman' => 140000,
+                'created_at' => date("Y-m-d H:i:s")
             ],
             [
-                'Id_Jadwal' => 'JUM14',
-                'Hari_Pengiriman' => 'Jumat',
-                'Jam_Pengiriman' => 140000
+                'id_jadwal' => 'JUM14',
+                'hari_pengiriman' => 'Jumat',
+                'jam_pengiriman' => 140000,
+                'created_at' => date("Y-m-d H:i:s")
             ]
         ]);
     }

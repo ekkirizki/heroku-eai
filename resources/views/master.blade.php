@@ -8,20 +8,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Logistik</title>
     <style>
-        body {
-            padding-top: 50px;
-        }
-
         .cari {
             background-image: url("{{ asset('gambar/search.png') }}");
             background-size: 40px;
             background-repeat: no-repeat;
             padding-left: 40px;
         }
-
     </style>
 </head>
 <body>
+    <header>
      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <nav class="nav nav-pills justify-content-center">
             <a @if(URL::current() == url('')) class="navbar-brand active" @else class="navbar-brand" @endif
@@ -31,8 +27,9 @@
              href="{{ url ('jadwal_pengiriman') }}"> Jadwal Pengiriman</a>            
         </nav>
     </nav>
-
-    @yield('konten')
+    </header>
     
+    @yield('konten')
+
 </body>
 </html>

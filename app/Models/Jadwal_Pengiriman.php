@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal_Pengiriman extends Model
 {
     use HasFactory;
-    protected $peng = ['Id_Jadwal', 'Hari_Pengiriman', 'Jam_Pengiriman'];
+    protected $table = 'jadwal_pengiriman';
+    protected $fillable = ['Id_Jadwal', 'Hari_Pengiriman', 'Jam_Pengiriman'];
 }

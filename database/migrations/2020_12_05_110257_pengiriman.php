@@ -16,12 +16,14 @@ class Pengiriman extends Migration
     {
         //
         Schema::create('pengiriman', function (Blueprint $table) {
-            $table->string('Id_Pengiriman')->primary('Id_Pengiriman');
-            $table->string('Id_Karyawan');
-            $table->string('Id_Penjualan');
-            $table->string('Id_Jadwal')->foreign('Id_Jadwal')->references('Id_Jadwal')->on('Jadwal_Pengiriman');
-            $table->string('Id_Pelanggan');
-            $table->string('Status_Pelanggan');
+            $table->string('id_pengiriman')->primary('id_Pengiriman');
+            $table->string('id_karyawan');
+            $table->string('id_penjualan');
+            $table->string('id_jadwal')->foreign('id_jadwal')->references('id_jadwal')->on('jadwal_pengiriman');
+            $table->string('id_pelanggan');
+            $table->string('status_pelanggan');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

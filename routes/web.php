@@ -1,10 +1,9 @@
 <?php
 
 use App\Http\Controllers\jadwal_controller;
-use App\Http\Controllers\Jadwal_Pengiriman_Controller;
-use App\Http\Controllers\pengiriman;
 use App\Http\Controllers\pengiriman_controller;
 use Illuminate\Support\Facades\Route;
+use App\Models\pengiriman;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +22,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/jadwal_pengiriman', [jadwal_controller::class, 'index']);
-Route::get('/', [pengiriman_controller::class, 'index']);
+// Route::resource('jadwal_pengiriman', jadwal_controller::class);
+// Route::get('/', [pengiriman_controller::class, 'index']);
 Route::get('/tambah', function () {
     return view('insert');
-});
+})->name('tambah');
+// Route::post('/tambah', [pengiriman_controller::class, 'create']);
+// Route::get('/tambah', [pengiriman_controller::class, 'index']);
+// Route::post('/tambah/proses', [pengiriman_controller::class, 'store']);
+Route::resource('', pengiriman_controller::class)->except('edit', 'update', 'show', 'destroy');
+
+Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
+Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
+Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
