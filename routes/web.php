@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\absensi_controller;
 use App\Http\Controllers\apicontroller;
 use App\Http\Controllers\jadwal_controller;
 use App\Http\Controllers\pengiriman_controller;
@@ -22,7 +23,7 @@ use App\Models\pengiriman;
 // });
 
 
-Route::get('/jadwal_pengiriman', [jadwal_controller::class, 'index']);
+Route::get('/jadwal_pengiriman', [jadwal_controller::class, 'index'])->name('jadwal_pengiriman');
 // Route::resource('jadwal_pengiriman', jadwal_controller::class);
 // Route::get('/', [pengiriman_controller::class, 'index']);
 Route::get('/tambah', function () {
@@ -36,3 +37,5 @@ Route::resource('', pengiriman_controller::class)->except('edit', 'update', 'sho
 Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
 Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
+
+Route::resource('absensi', absensi_controller::class);

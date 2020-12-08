@@ -17,7 +17,7 @@ class pengiriman_controller extends Controller
      */
     public function index()
     {
-        //
+        //        
         $pengiriman = DB::table('pengiriman')->get();
         // return view('logistik', ['Pengiriman' => $Pengiriman]);
         // $pengiriman = pengiriman::all();

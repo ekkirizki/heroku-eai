@@ -5,33 +5,6 @@
 <?php 
 use GuzzleHttp\Client;
 
-$url_sales = "https://cydt-salesmarketing.herokuapp.com/api/";
-
-$client_sales = new Client([
-    'base_uri' => $url_sales
-]);
-$response_sales = $client_sales->request('GET','pelanggans')->getBody();
-$hasil_sales = json_decode($response_sales);
-// $data = ["id", "id_penjualan", "nama_pelanggan", "alamat_pelanggan"];
-// dd($response);
-// dd($hasil['data'][0]['id']);
-
-// dd($hasil->data['0']->id);
-// for ($i=0; $i < count($response["data"]); $i++) {
-//     // $idpen[$i][$i][$i] = [$response["data"][$i][$data[0]],
-//     // $response["data"][$i][$data[1]],
-//     // $response["data"][$i][$data[2]],
-//     // $response["data"][$i][$data[3]]];
-//     $idpel[$i] = $response["data"][$i][$data[0]];
-//     $idpen[$i] = $response["data"][$i][$data[1]];
-//     $namapel[$i] = $response["data"][$i][$data[2]];
-//     $alpel[$i] = $response["data"][$i][$data[3]];
-// };
-// echo $hasil['data'][0][$data[0]]; manggil hasil response
-// $pelanggan = [
-//     'id_penjualan' => $response->getBody(),
-// ]
-
 $url_hrd = "https://hrd-cydt.herokuapp.com/api/karyawan";
 
 $client_hrd = new Client([
@@ -196,14 +169,5 @@ $hasil_hrd = json_decode($response_hrd);
                 });                
             }
         </script>
-
-        {{-- <script>
-            function isi_otomatis() {
-             var jajal = document.getElementById("Id_Penjualan").value;
-            console.log(jajal);
-
-            }            
-            </script> --}}
-
 
 @endsection

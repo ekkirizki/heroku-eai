@@ -21,10 +21,12 @@
      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <nav class="nav nav-pills justify-content-center">
             <a @if(URL::current() == url('')) class="navbar-brand active" @else class="navbar-brand" @endif
-            href="{{ url('') }}"><img src="{{ asset('gambar/truck.png') }}"
+            href="{{ route('index') }}"><img src="{{ asset('gambar/truck.png') }}"
                     alt="Logistik" width="30px" height="30px"> Logistik</a>
             <a @if(URL::current() == url('/jadwal_pengiriman')) class="nav-link active" @else class="nav-link" @endif
-             href="{{ url ('jadwal_pengiriman') }}"> Jadwal Pengiriman</a>            
+             href="{{ route('jadwal_pengiriman') }}"> Jadwal Pengiriman</a>
+             <a @if(URL::current() == url('/absensi')) class="nav-link active" @else class="nav-link" @endif
+             href="{{ route('absensi.index') }}"> Jadwal Pengiriman</a>                        
         </nav>
     </nav>
     </header>

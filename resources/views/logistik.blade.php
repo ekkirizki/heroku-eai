@@ -65,6 +65,7 @@
            tabel = document.getElementById("pengiriman");
            tr = document.getElementsByTagName("tr");
 
+           console.log(filter);
            for (i = 0; i < tr.length; i++) {
                td = tr[i].getElementsByTagName("td")[1];
                if (td) {
