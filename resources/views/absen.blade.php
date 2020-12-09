@@ -27,15 +27,7 @@ $client_absensi = new Client([
 ]);
 $response_absensi = $client_hrd->request('GET','absensi')->getBody();
 $hasil_absensi = json_decode($response_absensi);
-echo $tgl_skr = date('Y-m-d')."<br>";
-echo $jam_server = date('H:i:s')."<br>";
 
-foreach ($hasil_absensi as $absen) {
-    echo $absen->jam_masuk . "<br>";
-    if ($absen->id_karyawan) {
-        # code...
-    }    
-}
 ?>
 <div class="container" style="margin-top: 65px;">
     <h1 class="text-center">Absensi</h1>
@@ -69,7 +61,7 @@ foreach ($hasil_absensi as $absen) {
     <form action="{{ route('absen.store') }}" method="POST">
         @csrf
     <input id="Hari" value="{{ date("Y-m-d") }}" hidden>
-        <table class="table">
+        <table class="table">            
                 <tr>
                     <td scope="row" style="width: 15%;">
                         <label for="Id_Karyawan" class="col-sm-1-12 col-form-label">
@@ -78,56 +70,64 @@ foreach ($hasil_absensi as $absen) {
                     <td>
                         <input list="list_karyawan" name="Id_Karyawan" autocomplete="off"
                         id="Id_Karyawan"
-                        class="form-control" onkeyup="isi_otomatis()">
+                        class="form-control">
                         <datalist id="list_karyawan">
-                            @foreach ($hasil_hrd as $penjualan)                                                        
+                            @foreach ($hasil_hrd as $hrd)                                                        
 
-                            <option value="{{ $penjualan->id }}">
+                            <option value="{{ $hrd->id }}">
                                                                                 
                                 @endforeach
                         </datalist>                        
                     </td>
-                </tr>                
-
+                </tr>   
                 <tr>
-                    <td class="text-left">
-                    <button type="submit" class="btn btn-primary" value="{{ date('h:i') }}"
-                    id="tombol">                        
-                    
+                <td>
+                    <label for="Jam_Masuk" class="col-sm-1-12 col-form-label">
+                            Jam Masuk</label>
+                </td>    
+                <td>
+                    <input type="text" name="Jam_Masuk" id="Jam_Masuk" class="form-control" autocomplete="off">
+                </td>
+                </tr>                             
+                <tr>
+                <td>
+                    <label for="Jam_Keluar" class="col-sm-1-12 col-form-label">
+                            Jam Keluar</label>
+                </td>    
+                <td>
+                    <input type="text" name="Jam_Keluar" id="Jam_Keluar" class="form-control" autocomplete="off">
+                </td>
+                </tr>                             
+                <tr>
+                    <td class="text-center" colspan="2">
+                    <button type="submit" class="btn btn-primary" id="tombol" style="width: 100%;">                      
+                    Absen
                     </button>
                     </td>                    
                 </tr>
             </tbody>
         </table>
+        <input type="hidden" name="Tanggal" id="Tanggal">
     </form>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript">
-            function isi_otomatis(){                
-                var idkar = document.getElementById("Id_Karyawan").value;
-                var baseurl = "https://hrd-cydt.herokuapp.com/api/karyawan";
-                console.log(baseurl);
-                var date = (new Date()).toISOString().split('T')[0];                       
-                var dates = new Date().toLocaleTimeString();;               
-                    console.log(date);
-                    console.log(dates)                
-                $.ajax({
-                    type: "get",
-                    url: baseurl,                                           
-                    success: function (data) {
-                    var json = data;                    
-                    console.log(data.id);
-                    // if((json.id == idkar && json.jam_masuk == null) && json.tanggal_masuk == date ){
-                    // document.getElementById("tombol").innerHTML = Masuk;
-                    // }
-                    // else{
-                    //     document.getElementById("tombol").innerHTML = Keluar;
-                    // }
-                    console.log(json.data.id);                    
-                }
-                });                
-            }
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>        
+
+        <script>
+            $(document).ready(function(){
+    $('#Jam_Masuk').timepicker({        
+        timeFormat: 'HH:mm'        
+    });
+    
+    $('#Jam_Keluar').timepicker({        
+        timeFormat: 'HH:mm'
+    });    
+            
+    var date = (new Date()).toISOString().split('T')[0];
+    document.getElementById("Tanggal").value = date;
+    });
+
         </script>
        
 @endsection

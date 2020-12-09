@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\absen_controller;
 use App\Http\Controllers\absensi_controller;
 use App\Http\Controllers\apicontroller;
 use App\Http\Controllers\gudang_controller;
@@ -39,5 +40,5 @@ Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
 Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
 
-Route::resource('absen', absensi_controller::class);
+Route::resource('absen', absen_controller::class);
 Route::resource('ambil_barang', gudang_controller::class);
