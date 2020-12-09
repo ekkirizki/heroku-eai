@@ -38,7 +38,7 @@ $hasil_hrd = json_decode($response_hrd);
 @endphp
 
 <div class="container" style="padding-top: 70px;">
-    <h1 class="text-center">Edit Pengiriman</h1>    
+    <h1 class="text-center">Ambil Barang</h1>    
         @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -68,7 +68,7 @@ $hasil_hrd = json_decode($response_hrd);
         <table class="table">
             <tr>
                     <td scope="row" style="width: 15%;">
-                        <label for="Id_Karyawan" class="col-sm-1-12 col-form-label">Id_Karyawan</label>
+                        <label for="Id_Karyawan" class="col-sm-1-12 col-form-label">Id Karyawan</label>
                     </td>
                     <td>
                          <input list="list_karyawan" name="Id_Karyawan" autocomplete="off"

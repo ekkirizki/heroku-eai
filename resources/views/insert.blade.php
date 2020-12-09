@@ -86,7 +86,7 @@ $hasil_hrd = json_decode($response_hrd);
             <tbody>
                 <tr>
                     <td scope="row" style="width: 15%;">
-                        <label for="Id_Pengiriman" class="col-sm-1-12 col-form-label">Id_Pengiriman</label>
+                        <label for="Id_Pengiriman" class="col-sm-1-12 col-form-label">Id Pengiriman</label>
                     </td>
                     <td><input type="text" name="Id_Pengiriman" class="form-control" id="Id_Pengiriman"
                             value="{{ $Id }}" readonly>
@@ -96,7 +96,7 @@ $hasil_hrd = json_decode($response_hrd);
                 <tr>
                     <td scope="row" style="width: 15%;">
                         <label for="Id_Penjualan" class="col-sm-1-12 col-form-label">
-                            Id_Penjualan</label>
+                            Id Penjualan</label>
                     </td>
                     <td>
                         <input list="list_jualan" name="Id_Penjualan" autocomplete="off"
@@ -114,7 +114,7 @@ $hasil_hrd = json_decode($response_hrd);
 
                 <tr>
                     <td scope="row" style="width: 15%;">
-                        <label for="Id_Karyawan" class="col-sm-1-12 col-form-label">Id_Karyawan</label>
+                        <label for="Id_Karyawan" class="col-sm-1-12 col-form-label">Id Karyawan</label>
                     </td>
                     <td>
                          <input list="list_karyawan" name="Id_Karyawan" autocomplete="off"
@@ -132,7 +132,7 @@ $hasil_hrd = json_decode($response_hrd);
 
                 <tr>
                     <td>
-                        <label for="Id_Jadwal" class="col-sm-1-12 col-form-label">Id_Jadwal</label>
+                        <label for="Id_Jadwal" class="col-sm-1-12 col-form-label">Id Jadwal</label>
                     </td>
                     <td>
                         <select class="custom-select my-1 mr-sm-2" id="Id_Jadwal" name="Id_Jadwal">
@@ -146,7 +146,7 @@ $hasil_hrd = json_decode($response_hrd);
                 </tr>
                 <tr>
                     <td>
-                        <label for="Id_Pelanggan" class="col-sm-1-12 col-form-label">Id_Pelanggan</label>
+                        <label for="Id_Pelanggan" class="col-sm-1-12 col-form-label">Id Pelanggan</label>
                     </td>
                     <td>
                         <input type="text" class="form-control" name="Id_Pelanggan" id="Id_Pelanggan"
@@ -156,7 +156,7 @@ $hasil_hrd = json_decode($response_hrd);
                 </tr>
                 <tr>
                     <td>
-                        <label for="Status_Pelanggan" class="col-sm-1-12 col-form-label">Status_Pelanggan</label>
+                        <label for="Status_Pelanggan" class="col-sm-1-12 col-form-label">Status Pelanggan</label>
                     </td>
                     <td>
                         <select class="custom-select my-1 mr-sm-2" id="Status_Pelanggan" name="Status_Pelanggan">
