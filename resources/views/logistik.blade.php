@@ -30,12 +30,12 @@
    <table class="table text-center" id="pengiriman">
        <thead>
            <tr>
-               <th>Id_Pengiriman</th>
-               <th>Id_Penjualan</th>
-               <th>Id_Karyawan</th>
-               <th>Id_Jadwal</th>
-               <th>Id_Pelanggan</th>
-               <th>Status_Pengiriman</th>
+               <th>Id Pengiriman</th>
+               <th>Id Penjualan</th>
+               <th>Id Karyawan</th>
+               <th>Id Jadwal</th>
+               <th>Id Pelanggan</th>
+               <th>Status Pengiriman</th>
                <th>Opsi</th>
            </tr>
        </thead>

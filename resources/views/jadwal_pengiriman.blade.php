@@ -18,9 +18,9 @@
     <table class="table text-center" id="pengiriman">
         <thead>
             <tr>
-                <th>Id_Jadwal</th>
-                <th>Hari_Pengiriman</th>
-                <th>Jam_Pengiriman</th>
+                <th>Id Jadwal</th>
+                <th>Hari Pengiriman</th>
+                <th>Jam Pengiriman</th>
             </tr>
         </thead>
         <tbody>
