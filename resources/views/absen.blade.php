@@ -46,7 +46,7 @@ echo date('H:i:s');
     @endif
 
 
-    <form action="{{ route('absensi.store') }}" method="POST">
+    <form action="{{ route('absen.store') }}" method="POST">
         @csrf
         <table class="table">
                 <tr>
