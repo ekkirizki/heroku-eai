@@ -9,6 +9,6 @@ class absensi_controller extends Controller
     //
     function index()
     {
-        return view('absensi');
+        return view('absen');
     }
 }

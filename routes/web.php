@@ -38,4 +38,4 @@ Route::get('edit/{id}', [pengiriman_controller::class, 'edit'])->name('edit');
 Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('update');
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
 
-Route::resource('absensi', absensi_controller::class);
+Route::resource('absen', absensi_controller::class);
