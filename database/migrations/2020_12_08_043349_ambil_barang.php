@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Penjualan extends Migration
+class AmbilBarang extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,10 @@ class Penjualan extends Migration
     {
         //
         Schema::create('ambil_barang', function (Blueprint $table) {
-            $table->string('id_barang')->primary('id_barang');
+            $table->id();
+            $table->string('id_barang');
             $table->string('id_karyawan');
-            $table->int('jumlah_barang');
+            $table->integer('jumlah_barang');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
         });

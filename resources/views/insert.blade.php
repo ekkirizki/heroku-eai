@@ -1,7 +1,6 @@
 @extends('master')
 @section('konten')
 
-@csrf
 <?php 
 use GuzzleHttp\Client;
 

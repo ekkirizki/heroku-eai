@@ -27,6 +27,8 @@
              href="{{ route('jadwal_pengiriman') }}"> Jadwal Pengiriman</a>
              <a @if(URL::current() == url('/absensi')) class="nav-link active" @else class="nav-link" @endif
              href="{{ route('absen.index') }}"> Absensi</a>                        
+             <a @if(URL::current() == url('/ambil_barang')) class="nav-link active" @else class="nav-link" @endif
+             href="{{ route('ambil_barang.index') }}"> Ambil Barang</a>       
         </nav>
     </nav>
     </header>

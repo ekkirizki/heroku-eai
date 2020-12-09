@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\absensi_controller;
 use App\Http\Controllers\apicontroller;
+use App\Http\Controllers\gudang_controller;
 use App\Http\Controllers\jadwal_controller;
 use App\Http\Controllers\pengiriman_controller;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,4 @@ Route::post('update/{id}', [pengiriman_controller::class, 'update'])->name('upda
 Route::get('hapus/{id}', [pengiriman_controller::class, 'hapus'])->name('hapus');
 
 Route::resource('absen', absensi_controller::class);
+Route::resource('ambil_barang', gudang_controller::class);
