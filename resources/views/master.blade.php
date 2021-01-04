@@ -7,15 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Logistik</title>
-    <style>
-        .cari {
-            background-image: url("{{ asset('gambar/search.png') }}");
-            background-size: 40px;
-            background-repeat: no-repeat;
-            padding-left: 40px;
-        }
-    </style>
+    <title>Logistik</title>    
 </head>
 <body>
     <header>

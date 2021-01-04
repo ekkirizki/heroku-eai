@@ -41,7 +41,7 @@
                     </td>
                     <td>
                         <input type="text" class="form-control" name="Id_Penjualan" id="Id_Penjualan"
-                            placeholder="Id Penjualan" value=" {{ $peng->id_penjualan }} ">
+                            placeholder="Id Penjualan" value=" {{ $peng->id_penjualan }} " readonly>
                     </td>
                 </tr>
 
@@ -51,7 +51,7 @@
                     </td>
                     <td>
                         <input type="text" class="form-control" name="Id_Karyawan" id="Id_Karyawan"
-                            placeholder="Id Karyawan" value=" {{ $peng->id_karyawan }} ">          
+                            placeholder="Id Karyawan" value=" {{ $peng->id_karyawan }} " readonly>          
                     </td>
                 </tr>
 
@@ -60,13 +60,14 @@
                         <label for="Id_Jadwal" class="col-sm-1-12 col-form-label">Id Jadwal</label>
                     </td>
                     <td>
-                        <select class="custom-select my-1 mr-sm-2" id="Id_Jadwal" name="Id_Jadwal">
+                        <select class="custom-select my-1 mr-sm-2" id="Ids_Jadwal" name="Ids_Jadwal" disabled>
                             <option disabled>Pilih</option>
                             <?php $jadwal = DB::table('jadwal_pengiriman')->get(); ?>
                             @foreach ($jadwal as $jdwl)                            
                             <option value=" {{ $jdwl -> id_jadwal }} " @if($peng -> id_jadwal == $jdwl -> id_jadwal) selected @endif>{{ $jdwl -> id_jadwal }}</option>                                                    
                             @endforeach                            
-                        </select>                        
+                        </select>
+                        <input type="hidden" value="{{ $peng -> id_jadwal }}" id="Id_Jadwal" name="Id_Jadwal">                        
                     </td>
                 </tr>
                 <tr>
@@ -75,7 +76,7 @@
                     </td>
                     <td>
                         <input type="text" class="form-control" name="Id_Pelanggan" id="Id_Pelanggan"
-                            placeholder="Id Pelanggan" value=" {{ $peng -> id_pelanggan }} ">
+                            placeholder="Id Pelanggan" value=" {{ $peng -> id_pelanggan }} " readonly>
                     </td>
                 </tr>
                 <tr>
